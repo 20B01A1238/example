@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM elements,event</title>
+</head>
+
+<body>
+    <h2>JavaScript HTML DOM</h2>
+
+    <p id="intro">Finding HTML Elements by Id</p>
+    <p>This example demonstrates the <b>getElementsById</b> method.</p>
+
+    <p id="demo"></p>
+    <h2>JavaScript HTML Events</h2>
+    <h2 onclick="changeText(this)">Click on this text!</h2>
+    <p>Click the button to display the date.</p>
+
+    <button onclick="displayDate()">The time is?</button>
+    <p id="demo"></p>
+    Enter your name: <input type="text" id="fname" onchange="upperCase()">
+    <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)"
+        style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+        Mouse Over Me</div>
+
+
+    <script>
+        const element = document.getElementById("intro");
+
+        document.getElementById("demo").innerHTML =
+            "The text from the intro paragraph is: " + element.innerHTML;
+
+        function changeText(id) {
+            id.innerHTML = "Ooops!";
+        }
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+        function upperCase() {
+            const x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+        function mOver(obj) {
+            obj.innerHTML = "Thank You"
+        }
+
+        function mOut(obj) {
+            obj.innerHTML = "Mouse Over Me"
+        }
+
+    </script>
+
+</body>
+</body>
+
+</html>
